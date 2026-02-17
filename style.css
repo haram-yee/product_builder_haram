@@ -78,6 +78,10 @@ button:hover {
     background-color: #29bba0;
 }
 
+button + button {
+    margin-left: 10px;
+}
+
 /* Results Section */
 #results h2 {
     border-bottom: 2px solid #eee;

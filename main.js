@@ -28,6 +28,20 @@ if (savedTheme) {
     setTheme(true);
 }
 
+function randomSelect() {
+    const userNumberInputs = document.querySelectorAll('#user-numbers input');
+    const randomNumbers = new Set();
+    while (randomNumbers.size < 6) {
+        const randomNum = Math.floor(Math.random() * 45) + 1;
+        randomNumbers.add(randomNum);
+    }
+
+    const randomNumbersArray = Array.from(randomNumbers);
+    userNumberInputs.forEach((input, index) => {
+        input.value = randomNumbersArray[index];
+    });
+}
+
 function draw() {
     // 1. Get user numbers
     const userNumberInputs = document.querySelectorAll('#user-numbers input');
