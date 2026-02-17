@@ -1,35 +1,37 @@
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-const randomSelectBtn = document.getElementById('random-select');
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const randomSelectBtn = document.getElementById('random-select');
 
-// Function to set the theme
-const setTheme = (isDark) => {
-    if (isDark) {
-        body.classList.add('dark-mode');
-        themeToggle.textContent = '라이트 모드 전환';
-        localStorage.setItem('theme', 'dark');
-    } else {
-        body.classList.remove('dark-mode');
-        themeToggle.textContent = '다크 모드 전환';
-        localStorage.setItem('theme', 'light');
+    // Function to set the theme
+    const setTheme = (isDark) => {
+        if (isDark) {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '라이트 모드 전환';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            body.classList.remove('dark-mode');
+            themeToggle.textContent = '다크 모드 전환';
+            localStorage.setItem('theme', 'light');
+        }
+    };
+
+    // Event listener for the toggle button
+    themeToggle.addEventListener('click', () => {
+        const isDarkMode = body.classList.contains('dark-mode');
+        setTheme(!isDarkMode);
+    });
+
+    randomSelectBtn.addEventListener('click', randomSelect);
+
+    // Immediately check for saved theme preference on script load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        setTheme(savedTheme === 'dark');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setTheme(true);
     }
-};
-
-// Event listener for the toggle button
-themeToggle.addEventListener('click', () => {
-    const isDarkMode = body.classList.contains('dark-mode');
-    setTheme(!isDarkMode);
 });
-
-randomSelectBtn.addEventListener('click', randomSelect);
-
-// Immediately check for saved theme preference on script load
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-    setTheme(savedTheme === 'dark');
-} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    setTheme(true);
-}
 
 function randomSelect() {
     const userNumberInputs = document.querySelectorAll('#user-numbers input');
