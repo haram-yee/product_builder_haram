@@ -1,5 +1,6 @@
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
+const randomSelectBtn = document.getElementById('random-select');
 
 // Function to set the theme
 const setTheme = (isDark) => {
@@ -19,6 +20,8 @@ themeToggle.addEventListener('click', () => {
     const isDarkMode = body.classList.contains('dark-mode');
     setTheme(!isDarkMode);
 });
+
+randomSelectBtn.addEventListener('click', randomSelect);
 
 // Immediately check for saved theme preference on script load
 const savedTheme = localStorage.getItem('theme');
