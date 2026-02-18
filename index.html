@@ -25,11 +25,32 @@
                     <input type="number" min="1" max="45" required>
                     <input type="number" min="1" max="45" required>
                 </div>
-                <button onclick="draw()">추첨하기</button>
+                <button id="draw-button">추첨하기</button>
                 <button id="random-select">랜덤 선택</button>
             </div>
 
             <div id="results"></div>
+
+            <section id="affiliate-section">
+                <hr>
+                <h2>제휴 문의</h2>
+                <p>저희와 함께하고 싶으신가요? 아래 양식을 통해 문의해 주세요.</p>
+                <form id="affiliate-form" action="https://formspree.io/f/mqedleew" method="POST">
+                    <div class="form-group">
+                        <label for="name">이름/기업명</label>
+                        <input type="text" id="name" name="name" required placeholder="홍길동">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">이메일 주소</label>
+                        <input type="email" id="email" name="email" required placeholder="example@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">문의 내용</label>
+                        <textarea id="message" name="message" required placeholder="제휴하고 싶은 내용을 적어주세요."></textarea>
+                    </div>
+                    <button type="submit" id="submit-button">문의 보내기</button>
+                </form>
+            </section>
         </main>
 
         <footer>

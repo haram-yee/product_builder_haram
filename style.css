@@ -141,6 +141,102 @@ footer {
     font-size: 0.9em;
 }
 
+/* Affiliate Section Styles */
+#affiliate-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fcfcfc;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+#affiliate-section h2 {
+    color: #4a90e2;
+    margin-bottom: 10px;
+}
+
+#affiliate-section hr {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+#submit-button {
+    width: 100%;
+    background-color: #4a90e2;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+}
+
+#submit-button:hover {
+    background-color: #357abd;
+}
+
+/* Dark Mode Support for Affiliate Section */
+body.dark-mode #affiliate-section {
+    background-color: #333;
+    border-color: #444;
+}
+
+body.dark-mode #affiliate-section h2 {
+    color: #50e3c2;
+}
+
+body.dark-mode .form-group label {
+    color: #ccc;
+}
+
+body.dark-mode .form-group input, 
+body.dark-mode .form-group textarea {
+    background-color: #2a2a2a;
+    color: #fff;
+    border-color: #444;
+}
+
+body.dark-mode #submit-button {
+    background-color: #50e3c2;
+    color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(80, 227, 194, 0.4);
+}
+
+body.dark-mode #submit-button:hover {
+    background-color: #29bba0;
+}
+
 /* Dark Mode */
 body.dark-mode {
     background-color: #1a1a1a;
